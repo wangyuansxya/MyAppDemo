@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ext {
+    compileSdkVersion = 25
+    buildToolsVersion = "25.0.2"
+
+    applicationId = "com.wangyuan.myappdemo"
+    minSdkVersion = 14
+    targetSdkVersion = 25
+    versionCode = 1
+    versionName = "1.0"
+    testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+
+    support_version = "25.3.0";
+
+    okhttp = '3.8.1'
+    picasso_version = "2.5.2"
+
+}
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
