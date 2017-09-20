@@ -27,3 +27,6 @@
 -dontwarn okhttp3.**
 -dontwarn okio.**
 -dontwarn javax.annotation.**
+
+##picasso config
+-dontwarn com.squareup.okhttp.**

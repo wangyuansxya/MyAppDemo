@@ -27,7 +27,7 @@ dependencies {
 
 
     //okhttp
-    compile "com.squareup.okhttp3:okhttp:${okhttp}"
+    compile "com.squareup.okhttp3:okhttp:${okhttp_version}"
 
     //picasso
     compile "com.squareup.picasso:picasso:${picasso_version}"
