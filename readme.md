@@ -205,3 +205,7 @@ https://github.com/square/leakcanary
 logger
 
 https://github.com/orhanobut/logger
+
+权限管理sdk
+第三方SDK：EasyPermissions:
+https://github.com/googlesamples/easypermissions
