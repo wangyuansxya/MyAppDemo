@@ -76,7 +76,7 @@ public class ImageLoaderConfig {
     }
 
     public int getErrorDrawable() {
-        return errorDrawable;
+        return errorDrawable <= 0 ? defaultDrawable : errorDrawable;
     }
 
     public int getDefaultDrawable() {
@@ -84,7 +84,7 @@ public class ImageLoaderConfig {
     }
 
     public int getLoadingDrawable() {
-        return loadingDrawable;
+        return loadingDrawable <= 0 ? defaultDrawable : loadingDrawable;
     }
 
     public Transformation getTransformation() {
@@ -100,6 +100,7 @@ public class ImageLoaderConfig {
         errorDrawable = builder.errorDrawable;
         defaultDrawable = builder.defaultDrawable;
         loadingDrawable = builder.loadingDrawable;
+        mTransformation = builder.mTransformation;
     }
 
     public static final class Builder {

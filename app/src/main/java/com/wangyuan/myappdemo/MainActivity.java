@@ -21,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
                 .url("http://img.tupianzj.com/uploads/allimg/20151020/ct3eucdl3nw62.jpg")
                 .defaultDrawable(R.mipmap.ic_launcher)
                 .transform(new RoundTransform(getApplicationContext(), 20))
+                .errorDrawable(R.mipmap.ic_launcher)
+                .loadingDrawable(R.mipmap.ic_launcher)
+                .wifiStrategy(ImageLoaderConfig.LOAD_STRATEGY_NORMAL)
+                .type(ImageLoaderConfig.PIC_LARGE)
+                .context(getApplicationContext())
                 .into(mIvPic)
                 .build());
     }

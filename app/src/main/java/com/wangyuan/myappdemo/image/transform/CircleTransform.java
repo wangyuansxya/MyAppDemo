@@ -20,7 +20,7 @@ public class CircleTransform implements Transformation {
         this.c = c;
         this.round = round;
     }
-
+    private static Paint paint = new Paint();
 
     @Override
     public Bitmap transform(Bitmap source) {
@@ -38,7 +38,6 @@ public class CircleTransform implements Transformation {
         Bitmap bitmap = Bitmap.createBitmap(size, size, source.getConfig());
 
         Canvas canvas = new Canvas(bitmap);
-        Paint paint = new Paint();
         BitmapShader shader = new BitmapShader(squaredBitmap,
                 BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP);
         paint.setShader(shader);

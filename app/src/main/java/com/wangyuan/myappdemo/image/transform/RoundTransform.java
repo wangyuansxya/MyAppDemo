@@ -22,6 +22,8 @@ public class RoundTransform implements Transformation {
         this.round = round;
     }
 
+    private static Paint paint = new Paint();
+
     @Override
     public Bitmap transform(Bitmap source) {
         int size = Math.min(source.getWidth(), source.getHeight());
@@ -35,7 +37,7 @@ public class RoundTransform implements Transformation {
         }
         Bitmap bitmap = Bitmap.createBitmap(size, size, source.getConfig());
         Canvas canvas = new Canvas(bitmap);
-        Paint paint = new Paint();
+
         BitmapShader shader = new BitmapShader(squaredBitmap,
                 BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP);
         paint.setShader(shader);

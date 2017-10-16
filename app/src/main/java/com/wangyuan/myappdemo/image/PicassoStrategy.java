@@ -13,8 +13,8 @@ public class PicassoStrategy implements ImageLoaderStrategy {
     @Override
     public void loadImage(Context c, ImageLoaderConfig config) {
         Picasso.with(c).load(config.getUrl())
-                .error(config.getDefaultDrawable())
-                .placeholder(config.getDefaultDrawable())
+                .placeholder(config.getLoadingDrawable())
+                .error(config.getErrorDrawable())
                 .transform(config.getTransformation())
                 .into(config.getImageView());
     }
