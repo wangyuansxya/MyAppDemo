@@ -5,26 +5,25 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.RectF;
 
 import com.squareup.picasso.Transformation;
 
 /**
- * Created by wangyuan on 2017/9/20.
+ * Created by wangyuan on 2017/10/16.
  */
 
-public class CircleTransform implements Transformation {
+public class RoundTransform implements Transformation {
 
     private Context c;
     private int round;
-    public CircleTransform(Context c, int round){
+    public RoundTransform(Context c, int round){
         this.c = c;
         this.round = round;
     }
 
-
     @Override
     public Bitmap transform(Bitmap source) {
-
         int size = Math.min(source.getWidth(), source.getHeight());
 
         int x = (source.getWidth() - size) / 2;
@@ -34,26 +33,21 @@ public class CircleTransform implements Transformation {
         if (squaredBitmap != source) {
             source.recycle();
         }
-
         Bitmap bitmap = Bitmap.createBitmap(size, size, source.getConfig());
-
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint();
         BitmapShader shader = new BitmapShader(squaredBitmap,
                 BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP);
         paint.setShader(shader);
         paint.setAntiAlias(true);
-
-        float r = size / 2f;
-//        float r = radius;
-        canvas.drawCircle(r, r, r, paint);
-
+        RectF rf = new RectF(0, 0, size, size);
+        canvas.drawRoundRect(rf, round, round, paint);
         squaredBitmap.recycle();
         return bitmap;
     }
 
     @Override
     public String key() {
-        return "CircleTransform";
+        return "RoundTransform";
     }
 }

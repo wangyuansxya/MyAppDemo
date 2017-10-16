@@ -6,6 +6,7 @@ import android.widget.ImageView;
 
 import com.wangyuan.myappdemo.image.ImageLoader;
 import com.wangyuan.myappdemo.image.ImageLoaderConfig;
+import com.wangyuan.myappdemo.image.transform.RoundTransform;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         ImageLoader.getInstance().loadImage(new ImageLoaderConfig.Builder()
                 .url("http://img.tupianzj.com/uploads/allimg/20151020/ct3eucdl3nw62.jpg")
                 .defaultDrawable(R.mipmap.ic_launcher)
+                .transform(new RoundTransform(getApplicationContext(), 20))
                 .into(mIvPic)
                 .build());
     }

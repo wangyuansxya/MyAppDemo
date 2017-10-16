@@ -3,6 +3,8 @@ package com.wangyuan.myappdemo.image;
 import android.content.Context;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Transformation;
+
 /**
  * Created by wangyuan on 2017/9/20.
  */
@@ -48,6 +50,11 @@ public class ImageLoaderConfig {
      */
     private int loadingDrawable;
 
+    /**
+     * 图片显示的形状
+     */
+    private Transformation mTransformation;
+
     public Context getContext() {
         return context;
     }
@@ -80,6 +87,10 @@ public class ImageLoaderConfig {
         return loadingDrawable;
     }
 
+    public Transformation getTransformation() {
+        return mTransformation;
+    }
+
     private ImageLoaderConfig(Builder builder) {
         context = builder.context;
         wifiStrategy = builder.wifiStrategy;
@@ -101,6 +112,7 @@ public class ImageLoaderConfig {
         private int defaultDrawable;
         private int loadingDrawable;
 
+        private Transformation mTransformation;
         public Builder() {
         }
 
@@ -141,6 +153,11 @@ public class ImageLoaderConfig {
 
         public Builder loadingDrawable(int val) {
             loadingDrawable = val;
+            return this;
+        }
+
+        public Builder transform(Transformation val) {
+            mTransformation = val;
             return this;
         }
 

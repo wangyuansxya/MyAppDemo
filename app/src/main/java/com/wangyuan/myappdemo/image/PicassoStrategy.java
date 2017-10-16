@@ -3,7 +3,6 @@ package com.wangyuan.myappdemo.image;
 import android.content.Context;
 
 import com.squareup.picasso.Picasso;
-import com.wangyuan.myappdemo.image.transform.CircleTransform;
 
 /**
  * Created by wangyuan on 2017/9/20.
@@ -16,7 +15,7 @@ public class PicassoStrategy implements ImageLoaderStrategy {
         Picasso.with(c).load(config.getUrl())
                 .error(config.getDefaultDrawable())
                 .placeholder(config.getDefaultDrawable())
-                .transform(new CircleTransform(c, 0))
+                .transform(config.getTransformation())
                 .into(config.getImageView());
     }
 }
