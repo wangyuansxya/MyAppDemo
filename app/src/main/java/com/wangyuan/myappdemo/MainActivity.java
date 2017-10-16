@@ -6,7 +6,7 @@ import android.widget.ImageView;
 
 import com.wangyuan.myappdemo.image.ImageLoader;
 import com.wangyuan.myappdemo.image.ImageLoaderConfig;
-import com.wangyuan.myappdemo.image.transform.OvalTransform;
+import com.wangyuan.myappdemo.image.transform.RoundTransform;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         ImageLoader.getInstance().loadImage(new ImageLoaderConfig.Builder()
                 .url("http://img.tupianzj.com/uploads/allimg/20151020/ct3eucdl3nw62.jpg")
                 .defaultDrawable(R.mipmap.ic_launcher)
-                .transform(new OvalTransform(getApplicationContext(), 20))
+                .transform(new RoundTransform(120))
                 .errorDrawable(R.mipmap.ic_launcher)
                 .loadingDrawable(R.mipmap.ic_launcher)
                 .wifiStrategy(ImageLoaderConfig.LOAD_STRATEGY_NORMAL)

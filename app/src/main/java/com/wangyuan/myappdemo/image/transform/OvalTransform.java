@@ -1,6 +1,5 @@
 package com.wangyuan.myappdemo.image.transform;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
@@ -16,10 +15,8 @@ import com.squareup.picasso.Transformation;
 
 public class OvalTransform implements Transformation {
 
-    private Context c;
     private int round;
-    public OvalTransform(Context c, int round){
-        this.c = c;
+    public OvalTransform(int round){
         this.round = round;
     }
 
