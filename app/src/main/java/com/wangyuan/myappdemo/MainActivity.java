@@ -1,14 +1,16 @@
 package com.wangyuan.myappdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.wangyuan.myappdemo.image.ImageLoader;
 import com.wangyuan.myappdemo.image.ImageLoaderConfig;
 import com.wangyuan.myappdemo.image.transform.RoundTransform;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView mIvPic;
 
@@ -28,5 +30,11 @@ public class MainActivity extends AppCompatActivity {
                 .context(getApplicationContext())
                 .into(mIvPic)
                 .build());
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent i = new Intent(this, MyActivity.class);
+        startActivity(i);
     }
 }

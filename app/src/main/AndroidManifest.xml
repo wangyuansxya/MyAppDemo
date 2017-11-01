@@ -21,6 +21,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MyActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="com.wangyuan.myappdemo.MyActivity"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.wangyuan.aidl.MyService" android:process=":remote">
+            <intent-filter>
+                <action android:name="com.wangyuan.aidl.MyService"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
