@@ -2,8 +2,8 @@ package com.wangyuan.myappdemo.image;
 
 import android.widget.ImageView;
 
+import com.wangyuan.appdemo.app.MyApp;
 import com.wangyuan.myappdemo.R;
-import com.wangyuan.myappdemo.app.MyApp;
 import com.wangyuan.myappdemo.image.transform.EmptyTransform;
 
 /**
@@ -55,13 +55,13 @@ public class ImageLoader {
     public void loadImage(ImageLoaderConfig imageLoader) {
         if (mImageLoaderStrategy == null)
             throw new NullPointerException("mImageLoaderStrategy can not been null");
-        mImageLoaderStrategy.loadImage(MyApp.inst(), imageLoader);
+        mImageLoaderStrategy.loadImage(MyApp.Companion.getInstance(), imageLoader);
     }
 
     public void loadImage(String url, ImageView iv) {
         if (mImageLoaderStrategy == null)
             throw new NullPointerException("mImageLoaderStrategy can not been null");
-        mImageLoaderStrategy.loadImage(MyApp.inst(), new ImageLoaderConfig.Builder()
+        mImageLoaderStrategy.loadImage(MyApp.Companion.getInstance(), new ImageLoaderConfig.Builder()
                 .url(url)
                 .defaultDrawable(R.mipmap.ic_launcher)
                 .transform(new EmptyTransform())
