@@ -20,7 +20,7 @@ Android开发常用框架
 
 Picasso。至于为什么没有选择Glide和Fresco可以自行google，三个框架各有优势。因此使用的时候可以根据app的特点来确定
 
-* 非常流行图片加载库: [Android-Universal-Image-Loader](https://github.com/nostra13/Android-Universal-Image-Loader)
+* 非常流行图片加载库 [Android-Universal-Image-Loader](https://github.com/nostra13/Android-Universal-Image-Loader)
 * [Glide](https://github.com/bumptech/glide)
 * facebook出品，必属精品[fresco](https://github.com/facebook/fresco)
 * [picasso](https://github.com/square/picasso)
